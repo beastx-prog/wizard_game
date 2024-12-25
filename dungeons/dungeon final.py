@@ -79,13 +79,18 @@ def play():
     text2=font2.render('Come forth warrior',True,(white_color))
     text2rec=text2.get_rect()
     text2rec.center=((200,300))
+    font3=pygame.font.Font('ork-slayer.ttf',60)
+    text3=font3.render('do you wish to go forward',True,white_color)
+    text3rec=text3.get_rect()
+    text3rec.center=((200,300))
 
     frame=0
     run=True
     while run:
         screen.fill((0,0,0))
         screen.blit(text2,text2rec.center)
-        print("hello")
+        screen.blit(text3,text3rec.center)
+        
         n=random.randrange(1,850)
         v=random.randrange(1,850)
         if n-v >= animation_cooldown:
