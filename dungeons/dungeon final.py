@@ -85,6 +85,7 @@ def play():
     while run:
         screen.fill((0,0,0))
         screen.blit(text2,text2rec.center)
+        print("hello")
         n=random.randrange(1,850)
         v=random.randrange(1,850)
         if n-v >= animation_cooldown:
