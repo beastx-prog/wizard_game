@@ -1,12 +1,15 @@
 import pygame
 import random
 
+pygame.init()
+
 pygame.font.init()
 pygame.font.get_init()
 
 clock=pygame.time.Clock()
 
 screen=pygame.display.set_mode((1472,832))
+pygame.init()
 white_color=(255,255,255)
 
 
@@ -36,6 +39,7 @@ class SpritSheet():
         
 class Button():
     def __init__(self,x,y,image,scale):
+        pygame.init()
         width=image.get_width()
         height=image.get_height()
         self.image=pygame.transform.scale(image,(int(width*scale),int(height*scale)))
@@ -75,16 +79,17 @@ for i in range(animation_steps):
 
 def play():
     global white_color
-    font2=pygame.font.Font('ork-slayer.ttf',60)
+    font2=pygame.font.Font('ork-slayer.ttf',35)
     text2=font2.render('Come forth warrior',True,(white_color))
     text2rec=text2.get_rect()
-    text2rec.center=((200,300))
-    font3=pygame.font.Font('ork-slayer.ttf',60)
-    text3=font3.render('do you wish to go forward',True,white_color)
+    text2rec.center=((80,300))
+    font3=pygame.font.Font('ork-slayer.ttf',35)
+    text3=font3.render('These dungeons are crawling with orcs and other evil...that wish to destroy us',True,white_color)
     text3rec=text3.get_rect()
-    text3rec.center=((200,300))
+    text3rec.center=((200,500))
 
     frame=0
+    pygame.init()
     run=True
     while run:
         screen.fill((0,0,0))
@@ -112,6 +117,7 @@ exit_button=Button(50,200,exit_btn,0.7)
 #main screen/loop
 run=True
 while run:
+    pygame.init()
 
     screen.fill(white_color)
     screen.blit(bg_image,dest=(0,0))
