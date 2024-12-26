@@ -1,6 +1,7 @@
 import pygame
 import random
 
+pygame.init()
 pygame.font.init()
 pygame.font.get_init()
 
@@ -75,14 +76,14 @@ for i in range(animation_steps):
 
 def play():
     global white_color
-    font2=pygame.font.Font('ork-slayer.ttf',60)
+    font2=pygame.font.Font('ork-slayer.ttf',35)
     text2=font2.render('Come forth warrior',True,(white_color))
     text2rec=text2.get_rect()
     text2rec.center=((200,300))
-    font3=pygame.font.Font('ork-slayer.ttf',60)
+    font3=pygame.font.Font('ork-slayer.ttf',35)
     text3=font3.render('do you wish to go forward',True,white_color)
     text3rec=text3.get_rect()
-    text3rec.center=((200,300))
+    text3rec.center=((200,400))
 
     frame=0
     run=True
@@ -118,10 +119,11 @@ while run:
     screen.blit(text1,text1rec.center)
     if play_button.draw():
         play()
-        pygame.quit()
+        exit()
+       
     if exit_button.draw():
         run=False
-        pygame.quit()
+        exit()
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             run=False
