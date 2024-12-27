@@ -15,6 +15,7 @@ white_color=(255,255,255)
 strt_btn=pygame.image.load('start_btn.png')
 bg_image=pygame.image.load('dun_bg.png')
 exit_btn=pygame.image.load('exit_btn.png')
+yes_btn=pygame.image.load('yes.png')
 
 
 #text
@@ -59,6 +60,16 @@ class Button():
         return action
 
 
+def yes():
+    pygame.init()
+    screen3=pygame.display.set_mode((1000,700))
+    run=True
+    while run:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+        pygame.display.update()
+
 #retrieving images from sprite sheet
 
 sprite_sheet_image=pygame.image.load('wiz nimation.png')
@@ -92,6 +103,8 @@ def play():
         screen2.fill((0,0,0))
         screen2.blit(text2,text2rec.center)
         screen2.blit(text3,text3rec.center)
+        if yes_button.draw()==True:
+            yes()
         
         n=random.randrange(1,850)
         v=random.randrange(1,850)
@@ -110,6 +123,7 @@ def play():
 #defining buttons
 play_button=Button(50,100,strt_btn,0.7)
 exit_button=Button(50,200,exit_btn,0.7)
+yes_button=Button(500,430,yes_btn,1.5)
 
 #main screen/loop
 run=True
