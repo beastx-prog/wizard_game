@@ -105,6 +105,7 @@ def play():
         screen2.blit(text3,text3rec.center)
         if yes_button.draw()==True:
             yes()
+            exit()
         
         n=random.randrange(1,850)
         v=random.randrange(1,850)
@@ -116,6 +117,7 @@ def play():
         for event in pygame.event.get():
             if event.type ==pygame.QUIT:
                 run=False
+                
         pygame.display.update()
         
     
