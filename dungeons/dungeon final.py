@@ -76,6 +76,7 @@ for i in range(animation_steps):
 
 def play():
     global white_color
+    screen2=pygame.display.set_mode((1472,900))
     font2=pygame.font.Font('ork-slayer.ttf',35)
     text2=font2.render('Come forth warrior',True,(white_color))
     text2rec=text2.get_rect()
@@ -88,9 +89,9 @@ def play():
     frame=0
     run=True
     while run:
-        screen.fill((0,0,0))
-        screen.blit(text2,text2rec.center)
-        screen.blit(text3,text3rec.center)
+        screen2.fill((0,0,0))
+        screen2.blit(text2,text2rec.center)
+        screen2.blit(text3,text3rec.center)
         
         n=random.randrange(1,850)
         v=random.randrange(1,850)
