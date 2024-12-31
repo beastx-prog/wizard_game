@@ -79,7 +79,7 @@ sprite_sheet=SpritSheet(sprite_sheet_image)
 animation_list= []
 animation_steps=18
 last_update=pygame.time.get_ticks()
-animation_cooldown=540
+animation_cooldown=560
 
 
 for i in range(animation_steps):
