@@ -24,19 +24,32 @@ last_update=pygame.time.get_ticks()
 animation_cooldown=560
 frame=0
 
+def ts():
+    pygame.init()
+    global run
+    while run:
+        screen.fill((255,255,255))
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                run=False
+                exit()
+        pygame.display.update()
 
 for i in range(animation_steps):
-    animation_list.append(sprite_sheet.get_image(i,1000,790,1.7,(0,0,0)))
+    animation_list.append(sprite_sheet.get_image(i,1000,790,1.8,(0,0,0)))
 run =True
 while run:
     screen.fill((0,0,0))
-    n=random.randrange(1,850)
-    v=random.randrange(1,850)
+    n=random.randrange(1,1050)
+    v=random.randrange(1,1050)
     if n-v >= animation_cooldown:
         frame+=1
         if frame >= len(animation_list):
             frame=0
-    screen.blit(animation_list[frame],(60,20))
+            if frame==0:
+                ts()
+                
+    screen.blit(animation_list[frame],(20,20))
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             run=False
