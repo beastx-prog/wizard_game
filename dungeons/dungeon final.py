@@ -62,9 +62,46 @@ class Button():
 
 def yes():
     pygame.init()
-    screen3=pygame.display.set_mode((1000,700))
+    global SpritSheet
+    sprite_sheet_image=pygame.image.load('closing screen.png')
+    sprite_sheet=SpritSheet(sprite_sheet_image)
+
+
+    animation_list= []
+    animation_steps=22
+    last_update=pygame.time.get_ticks()
+    animation_cooldown=560
+    frame=0
+
+
+    screen3=pygame.display.set_mode((1500,900))
+
+    def player_screen():
+        global run
+        screen4=pygame.display.set_mode((1000,800))
+        while run:
+            screen4.fill((10,80,10))
+            for event in pygame.event.get():
+                if event.type==pygame.QUIT:
+                    run=False
+                    exit()
+            pygame.display.update()
+
+
+    for i in range(animation_steps):
+        animation_list.append(sprite_sheet.get_image(i,1000,790,1.3,(0,0,0)))
     run=True
     while run:
+        screen3.fill((0,0,0))
+        n=random.randrange(1,1050)
+        v=random.randrange(1,1050)
+        if n-v >= animation_cooldown:
+            frame+=1
+            if frame >= len(animation_list):
+                frame=0
+                if frame==0:
+                    player_screen()
+        screen3.blit(animation_list[frame],dest=(20,5))
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
