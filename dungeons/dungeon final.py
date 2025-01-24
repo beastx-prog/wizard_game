@@ -162,7 +162,7 @@ def play():
 #defining buttons
 play_button=Button(50,100,strt_btn,0.7)
 exit_button=Button(50,200,exit_btn,0.7)
-yes_button=Button(500,430,yes_btn,1.5)
+yes_button=Button(300,430,yes_btn,2.0)
 
 #main screen/loop
 run=True
