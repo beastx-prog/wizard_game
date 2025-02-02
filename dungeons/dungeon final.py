@@ -16,6 +16,7 @@ strt_btn=pygame.image.load('start_btn.png')
 bg_image=pygame.image.load('dun_bg.png')
 exit_btn=pygame.image.load('exit_btn.png')
 yes_btn=pygame.image.load('yes.png')
+stone_image=pygame.image.load('stone.png')
 
 
 #text
@@ -65,6 +66,7 @@ def yes():
     global SpritSheet
     sprite_sheet_image=pygame.image.load('closing screen.png')
     sprite_sheet=SpritSheet(sprite_sheet_image)
+    
 
 
     animation_list= []
@@ -80,12 +82,14 @@ def yes():
         global run
         screen4=pygame.display.set_mode((1000,800))
         while run:
-            screen4.fill((10,80,10))
+            screen4.fill((255,255,255))
+            screen4.blit(stone_image,dest=(0,0))
             for event in pygame.event.get():
                 if event.type==pygame.QUIT:
                     run=False
                     exit()
             pygame.display.update()
+        pygame.display.update() 
 
 
     for i in range(animation_steps):
