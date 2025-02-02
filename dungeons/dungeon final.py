@@ -1,7 +1,5 @@
 import pygame
 import random
-import tkinter as tk
-
 
 pygame.init()
 pygame.font.init()
