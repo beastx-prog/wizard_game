@@ -1,5 +1,7 @@
 import pygame
 import random
+import tkinter as tk
+
 
 pygame.init()
 pygame.font.init()
@@ -122,6 +124,7 @@ animation_cooldown=560
 for i in range(animation_steps):
     animation_list.append(sprite_sheet.get_image(i,150,150,5,(0,0,0)))
 
+#defining play function
 def play():
     global white_color
     screen2=pygame.display.set_mode((1472,900))
