@@ -60,6 +60,17 @@ class Button():
         screen.blit(self.image,(self.rect.x,self.rect.y))
         return action
 
+#creating an image controller
+
+class stone():
+    def __init__(self,x,y,image,scale):
+        width=image.get_width()
+        height=image.get_height()
+        self.image=pygame.transform.scale(image,(int(width*scale),int(height*scale)))
+        self.rect=self.image.get_rect()
+        self.rect.topleft=(x,y)
+    def draw(self):
+        screen.blit(self.image,(self.rect.x,self.rect.y))
 
 def yes():
     pygame.init()
@@ -80,10 +91,12 @@ def yes():
 
     def player_screen():
         global run
+        #definig stones
+        stone_img=stone(100,100,stone_image,1.5)
         screen4=pygame.display.set_mode((1000,800))
         while run:
             screen4.fill((255,255,255))
-            screen4.blit(stone_image,dest=(0,0))
+            stone_img.draw()
             for event in pygame.event.get():
                 if event.type==pygame.QUIT:
                     run=False
