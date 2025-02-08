@@ -16,8 +16,8 @@ strt_btn=pygame.image.load('start_btn.png')
 bg_image=pygame.image.load('dun_bg.png')
 exit_btn=pygame.image.load('exit_btn.png')
 yes_btn=pygame.image.load('yes.png')
-stone_image=pygame.image.load('stone.png')
-
+background=pygame.image.load('gbg.png')
+player=pygame.image.load('player.png')
 
 #text
 font1=pygame.font.Font('ork-slayer.ttf',80)
@@ -91,12 +91,14 @@ def yes():
 
     def player_screen():
         global run
-        #definig stones
-        stone_img=image_controller(0,0,stone_image,2.5)
+        #defining player
+        player_img=image_controller(100,450,player,3)
+        key=pygame.key.get_pressed
         screen4=pygame.display.set_mode((1000,800))
         while run:
             screen4.fill((255,255,255))
-            stone_img.draw()
+            screen4.blit(background,dest=(0,0))
+            player_img.draw()
             for event in pygame.event.get():
                 if event.type==pygame.QUIT:
                     run=False
