@@ -62,7 +62,7 @@ class Button():
 
 #creating an image controller
 
-class stone():
+class image_controller():
     def __init__(self,x,y,image,scale):
         width=image.get_width()
         height=image.get_height()
@@ -92,7 +92,7 @@ def yes():
     def player_screen():
         global run
         #definig stones
-        stone_img=stone(100,100,stone_image,1.5)
+        stone_img=image_controller(0,0,stone_image,2.5)
         screen4=pygame.display.set_mode((1000,800))
         while run:
             screen4.fill((255,255,255))
