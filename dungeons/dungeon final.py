@@ -17,7 +17,7 @@ bg_image=pygame.image.load('dun_bg.png')
 exit_btn=pygame.image.load('exit_btn.png')
 yes_btn=pygame.image.load('yes.png')
 background=pygame.image.load('gbg.png')
-player=pygame.image.load('player.png')
+player=pygame.image.load('p.png')
 
 #text
 font1=pygame.font.Font('ork-slayer.ttf',80)
@@ -92,7 +92,7 @@ def yes():
     def player_screen():
         global run
         #defining player
-        player_img=image_controller(100,450,player,3)
+        player_img=image_controller(100,450,player,1)
         key=pygame.key.get_pressed
         screen4=pygame.display.set_mode((1000,800))
         while run:
